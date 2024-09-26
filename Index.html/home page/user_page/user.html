@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .profile-container {
+            background-color: #1e1e1e; /* Darker container */
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            cursor: pointer; /* Add cursor pointer to indicate clickability */
+        }
+
+        .profile-header h2 {
+            margin: 0;
+            font-size: 32px;
+            color: #ffffff; /* White text for header */
+        }
+
+        .profile-header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #b0bec5; /* Lighter text for email and age */
+        }
+
+        .profile-details {
+            background-color: #263238; /* Darker background for details */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .profile-details h3 {
+            margin: 0;
+            font-size: 24px;
+            color: #ffffff; /* White text for section header */
+        }
+
+        .profile-details p {
+            font-size: 16px;
+            color: #b0bec5; /* Lighter text for details */
+        }
+
+        .user-info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            color: #ffffff; /* White text for user info */
+        }
+
+        .user-info div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .grid-item {
+            background-color: #37474f; /* Dark grid item */
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            text-align: left;
+        }
+
+        .grid-item h4 {
+            margin-top: 0;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ffffff; /* White text for grid item title */
+        }
+
+        .grid-item p {
+            font-size: 14px;
+            color: #b0bec5; /* Lighter text for grid item content */
+        }
+
+        .upload-container {
+            margin-top: 20px;
+        }
+
+        .upload-container input {
+            display: none;
+        }
+
+        .upload-label {
+            background-color: #007bff; /* Blue button */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .upload-label:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <!-- Anchor tag wrapping the image for redirection -->
+            <a href="home page/mentor/mentors/mentor2.html"> <!-- Change the href to your target page -->
+                <img id="profilePhoto" src="https://xsgames.co/randomusers/assets/avatars/male/1.jpg" alt="Profile Photo">
+            </a>
+            <div>
+                <h2 id="profileName">John Doe</h2>
+                <p id="profileEmail">Email: johndoe@example.com</p>
+                <p id="profileAge">Age: 30</p>
+            </div>
+        </div>
+
+        <div class="upload-container">
+            <label for="fileUpload" class="upload-label">Upload Profile Photo</label>
+            <input type="file" id="fileUpload" accept="image/*">
+        </div>
+
+        <div class="profile-details">
+            <h3>Profile Details</h3>
+            <div class="user-info">
+                <div>
+                    <p>Location:</p>
+                    <p>San Francisco, CA</p>
+                </div>
+                <div>
+                    <p>Occupation:</p>
+                    <p>Web Developer</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <h4>About Me</h4>
+                <p>John is a passionate web developer with a love for creating beautiful and functional websites.</p>
+            </div>
+            <div class="grid-item">
+                <h4>Interests</h4>
+                <p>He enjoys hiking, photography, and exploring new technologies.</p>
+            </div>
+            <div class="grid-item">
+                <h4>Goals</h4>
+                <p>John aims to become a full-stack developer and start his own tech company.</p>
+            </div>
+            <div class="grid-item">
+                <h4>Hobbies</h4>
+                <p>In his free time, he loves to travel and learn about different cultures.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get username and profile photo from localStorage and update the profile page
+        const username = localStorage.getItem('username');
+        const profileName = document.getElementById('profileName');
+        const profileEmail = document.getElementById('profileEmail');
+        const profilePhoto = document.getElementById('profilePhoto');
+        const fileUpload = document.getElementById('fileUpload');
+
+        if (username) {
+            profileName.textContent = username; // Update the username in the header
+            profileEmail.textContent = `Email: ${username}@example.com`; // Placeholder for email
+        }
+
+        // Handle profile photo upload
+        fileUpload.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profilePhoto.src = e.target.result; // Update profile photo
+                    localStorage.setItem('profilePhoto', e.target.result); // Save to localStorage
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Load the profile photo from localStorage
+        const storedPhoto = localStorage.getItem('profilePhoto');
+        if (storedPhoto) {
+            profilePhoto.src = storedPhoto; // Set profile photo if available
+        }
+    </script>
+
+</body>
+</html>

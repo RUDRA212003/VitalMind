@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- For social icons -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0e7ff; /* Softer background */
+            margin: 0;
+            padding: 20px; /* Padding for the body */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Mentor Card Styles */
+        .mentor-card {
+            background-color: #fff;
+            border-radius: 20px; /* Softer edges */
+            box-shadow: 0 16px 41px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+            width: 80%; /* Adjusted width for responsiveness */
+            max-width: 1150px; /* Maximum width */
+            padding: 30px; /* More padding */
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start; /* Align items to start for better layout */
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .mentor-card:hover {
+            transform: translateY(-10px); /* Hover effect for card */
+            box-shadow: 0 32px 66px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Mentor Information Styles */
+        .mentor-info {
+            display: flex;
+            flex-direction: column; /* Vertically align content */
+            align-items: center;
+            text-align: center; /* Center-align text */
+            width: 40%; /* Fixed width for info section */
+        }
+
+        .mentor-info img {
+            width: 200px; /* Standardized image size */
+            height: 200px; /* Standardized image size */
+            border-radius: 50%; /* Circular image */
+            object-fit: cover; /* Cover image */
+            border: 4px solid #007bff; /* Border color */
+            margin-bottom: 20px; /* Increased margin */
+        }
+
+        .mentor-details h2 {
+            margin: 0;
+            font-size: 36px; /* Increased font size */
+            color: #333;
+            font-weight: bold;
+        }
+
+        .mentor-details p {
+            margin: 5px 0; /* Increased margin */
+            color: #555;
+            font-size: 20px; /* Increased font size */
+        }
+
+        .experience {
+            color: #007bff;
+            margin-top: 5px; /* Increased margin */
+            font-size: 20px; /* Increased font size */
+            font-weight: bold;
+        }
+
+        .description {
+            margin-top: 15px; /* Increased margin */
+            font-size: 20px; /* Increased font size */
+            color: #777;
+            line-height: 1.5;
+        }
+
+        /* Social Icons Styles */
+        .social-icons {
+            margin-top: 15px; /* Increased margin */
+        }
+
+        .social-icons a {
+            margin: 0 10px; /* Increased margin */
+            color: #555;
+            text-decoration: none;
+        }
+
+        .social-icons a i {
+            font-size: 28px; /* Increased icon size */
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover i {
+            color: #007bff; /* Change color on hover */
+        }
+
+        /* Tags Styles */
+        .tags {
+            margin-top: 15px; /* Increased margin */
+            display: flex;
+            flex-wrap: wrap; /* Ensure tags wrap on small screens */
+            justify-content: center;
+        }
+
+        .tags span {
+            background-color: #e0e7ff;
+            border-radius: 20px; /* Increased border radius */
+            padding: 8px 15px; /* Increased padding */
+            margin: 6px; /* Increased margin */
+            font-size: 18px; /* Increased font size */
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        /* Right Panel Styles */
+        .right-panel {
+            width: 60%; /* Fixed width for right panel */
+            padding: 20px; /* Increased padding */
+            text-align: center; /* Center-align text */
+        }
+
+        /* Plan Options Styles */
+        .plan-options {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px; /* Increased margin */
+        }
+
+        .plan-options button {
+            background-color: transparent;
+            border: none;
+            padding: 12px; /* Increased padding */
+            font-size: 20px; /* Increased font size */
+            cursor: pointer;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .plan-options button.active {
+            color: #007bff; /* Active button color */
+            border-bottom: 3px solid #007bff; /* Increased border width */
+        }
+
+        /* Booking Details Styles */
+        .booking-details {
+            font-size: 18px; /* Increased font size */
+            color: #555;
+            margin-bottom: 15px; /* Increased margin */
+        }
+
+        .booking-price {
+            font-size: 36px; /* Increased font size */
+            color: #007bff;
+            margin: 20px 0; /* Increased margin */
+            font-weight: bold;
+        }
+
+        /* Book Button Styles */
+        .btn-book {
+            background-color: #6c63ff; /* Button color */
+            color: white; /* Text color */
+            border: none; /* No border */
+            padding: 15px; /* Increased padding */
+            border-radius: 10px; /* Increased border radius */
+            cursor: pointer; /* Pointer on hover */
+            width: 100%; /* Full width */
+            text-align: center; /* Center text */
+            font-size: 22px; /* Increased font size */
+            transition: background-color 0.3s ease; /* Transition for hover effect */
+        }
+
+        .btn-book:hover {
+            background-color: #4e46d4; /* Darker color on hover */
+        }
+
+        /* Next Available Styles */
+        .next-available {
+            margin-top: 15px; /* Increased margin */
+            color: #777; /* Text color */
+            font-size: 18px; /* Increased font size */
+        }
+    </style>
+</head>
+<body>
+    <div class="mentor-card">
+        <div class="mentor-info">
+            <img src="https://xsgames.co/randomusers/assets/avatars/female/5.jpg" alt="Mentor Photo">
+            <div class="mentor-details">
+                <h2>Veronicahhy</h2>
+                <p>Software Engineer</p>
+                <p class="experience">6 yrs of Exp</p>
+                <p class="description">
+                    Hello there! I'm a software engineer who specializes in data structures and algorithms. I have worked for the past 4 years at Google and have taken 70+ interviews at Google and more than 100 interviews overall.
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="tags">
+                    <span>Spark</span>
+                    <span>Big Data</span>
+                    <span>Data Warehousing</span>
+                    <span>Python</span>
+                    <span>SQL</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="plan-options">
+                <button class="active">6 Months</button>
+                <button>3 Months</button>
+                <button>1 Month</button>
+            </div>
+            <div class="booking-details">
+                <p>1x Sessions Per Week</p>
+                <p>Unlimited Chat with Mentor</p>
+                <p>Job Referrals in Top Companies</p>
+            </div>
+            <div class="booking-price">₹100 Per Month</div>
+            <button class="btn-book">Book a FREE Trial</button>
+            <div class="next-available">Next Available: Sat May 11 2024</div>
+        </div>
+    </div>
+</body>
+</html>
