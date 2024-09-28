@@ -6,9 +6,9 @@ Shivakumar S Paraddi (paraddishivakumar@gmail.com) <br>
 Rudresh M (rudratiptur@gmail.com) <br>
 Prathiba B R (prathibadevangp@gmail.com) <br>
 <br>
-Currently this project worked on FRONT-END part<br>
+Currently, this project is focused on the front-end development aspect.<br>
+In the branches, you can find the texts for VitalMinds,<br>
+starting from the landing page.<br>
 
-In branches you can get VitalMinds texts
-Start from Landing page <br>
-note:<br>
-Paths may changes because we had saved local device paths from pages to pages 
+Note: Please be aware that the paths may change,<br>
+as we have saved local device paths from page to page.
