@@ -6,8 +6,8 @@ Shivakumar S Paraddi (paraddishivakumar@gmail.com) <br>
 Rudresh M (rudratiptur@gmail.com) <br>
 Prathiba B R (prathibadevangp@gmail.com) <br>
 <br>
-Currently this proect worked on FRONT-END part
+Currently this proect worked on FRONT-END part<br>
 
->>Start from Landing page
->>note:
+Start from Landing page <br>
+note:<br>
 Paths may changes because we had saved local device paths from pages to pages 
