@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Dark background */
+            color: #fff; /* White text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #1DB954; /* Spotify green */
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 1s forwards 1.5s; /* Fade in after the checkmark */
+        }
+
+        p {
+            font-size: 18px;
+            color: #b3b3b3; /* Spotify lighter text */
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 1s forwards 2s; /* Fade in after the checkmark and title */
+        }
+
+        .checkmark {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            margin: 20px auto;
+            border-radius: 50%;
+            background-color: #1DB954;
+            opacity: 0; /* Start hidden */
+            animation: appear 1s forwards; /* Animate appearance */
+        }
+
+        .checkmark:after,
+        .checkmark:before {
+            content: "";
+            position: absolute;
+            background: white;
+            border-radius: 5px;
+            opacity: 0; /* Start hidden */
+        }
+
+        /* Checkmark drawing animations */
+        ..checkmark:before,
+.checkmark:after {
+    content: '';       /* Necessary for pseudo-elements */
+    position: absolute; /* Position relative to the parent */
+    background-color: white; /* Color of the check mark */
+}
+
+.checkmark:before {
+    width: 8px;               /* Width of the first line */
+    height: 50px;             /* Height of the first line */
+    left: 30%;                 /* Adjusted position */
+    bottom: 40%;               /* Adjusted position */
+    transform: rotate(125deg); /* Rotate to create the check mark */
+    animation: drawLine 0.5s forwards 0.5s; /* Animation for drawing line */
+}
+
+.checkmark:after {
+    width: 50px;              /* Width of the second line */
+    height: 8px;              /* Height of the second line */
+    left: 10%;                /* Adjusted position */
+    bottom: 35%;              /* Adjusted position */
+    transform: rotate(45deg); /* Rotate to create the check mark */
+    animation: drawLine 0.5s forwards 1s; /* Animation for drawing line */
+}
+        -->
+
+        /* Keyframe animations */
+        @keyframes appear {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes drawLine {
+            0% { opacity: 0; transform: scaleY(0); }
+            100% { opacity: 1; transform: scaleY(1); }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="checkmark"></div>
+        <h1>Payment Successful</h1>
+        <p>Your payment has been successfully processed.</p>
+        <p>Thank you for your transaction!</p>
+    </div>
+</body>
+</html>

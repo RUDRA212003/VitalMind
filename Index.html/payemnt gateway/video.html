@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Video Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            height: 80vh;
+            border: 1px solid #282828;
+            background-color: #181818;
+            border-radius: 10px;
+            box-shadow: 0 16px 41px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        /* Header Styles */
+        header {
+    width: 100%;
+    background-color: #1DB954;
+    display: flex;
+    justify-content: center; /* Center the logo and text horizontally */
+    align-items: center;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+header img {
+    height: 50px;
+    width: 50px; /* Ensure the width and height are equal */
+    border-radius: 50%; /* Makes the image circular */
+    margin-right: 15px; /* Space between the logo and text */
+    object-fit: cover; /* Ensure the image fits within the circle */
+}
+
+
+header h1 {
+    font-size: 24px;
+    color: white;
+}
+
+
+        /* Footer Styles */
+        footer {
+            width: 100%;
+            background-color: #282828;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+        }
+
+        footer p {
+            color: #b3b3b3;
+            font-size: 14px;
+        }
+
+        /* Video Section */
+        .video-section {
+            flex: 3;
+            background-color: #000;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Course Details Section */
+        .details-section {
+            flex: 1;
+            padding: 20px;
+            background-color: #181818;
+            color: #fff;
+            border-left: 1px solid #282828;
+            overflow-y: auto;
+        }
+
+        .details-section h2 {
+            color: #1DB954;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .mentor-info, .course-progress {
+            margin-bottom: 30px;
+        }
+
+        .mentor-info h3, .course-progress h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .mentor-info p {
+            font-size: 16px;
+            color: #b3b3b3;
+        }
+
+        .progress-bar {
+            background-color: #282828;
+            border-radius: 10px;
+            height: 20px;
+            position: relative;
+        }
+
+        .progress-bar span {
+            display: block;
+            height: 100%;
+            background-color: #1DB954;
+            border-radius: 10px;
+            width: 0%;
+        }
+
+        /* Redirect Button */
+        .redirect-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            background-color: #1DB954;
+            color: white;
+            font-size: 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .redirect-button:hover {
+            background-color: #1aa34a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="F:\HTML HACK\login\hackthon\Index.html\img\symbol.png" alt="VitalMinds Logo">
+            <h1>VitalMinds</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Video Section -->
+        <div class="video-section">
+            <iframe src="https://www.youtube.com/embed/z0n1aQ3IxWI?si=rtHCYnrYLo9OV5Dt" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- Course Details Section -->
+        <div class="details-section">
+            <h2>Course Details</h2>
+            
+            <!-- Mentor Info -->
+            <div class="mentor-info">
+                <h3>Mentor Information</h3>
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>ID:</strong> MNT12345</p>
+                <p><strong>Expertise:</strong> Web Development</p>
+            </div>
+
+            <!-- Course Progress -->
+            <div class="course-progress">
+                <h3>Course Progress</h3>
+                <div class="progress-bar">
+                    <span id="progress-bar"></span>
+                </div>
+                <p id="progress-text">Course Completion: 0%</</p>
+            </div>
+
+            <!-- Redirect Button -->
+            <a href="F:\HTML HACK\login\hackthon\Index.html\home page\home.html" class="redirect-button">Go to Course Page</a>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy;VitalMinds</p>
+    </footer>
+
+    <script>
+        // Simulate Course Progress (for example purposes)
+        let courseProgress = 0;
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+
+        setInterval(function() {
+            if (courseProgress < 100) {
+                courseProgress += 10;
+                progressBar.style.width = courseProgress + '%';
+                progressText.innerText = 'Course Completion: ' + courseProgress + '%';
+            }
+        }, 5000); // Increment progress every 3 seconds
+    </script>
+
+</body>
+</html>
+ 

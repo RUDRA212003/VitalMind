@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Profile - Dark Theme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- For social icons -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Spotify-inspired dark background */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff; /* White text for contrast */
+        }
+
+        /* Mentor Card Styles */
+        .mentor-card {
+            background-color: #181818; /* Darker card background */
+            border-radius: 20px;
+            box-shadow: 0 16px 41px rgba(0, 0, 0, 0.5); /* Dark shadow */
+            width: 80%;
+            max-width: 1150px;
+            padding: 30px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            border: 1px solid #282828; /* Subtle border */
+            transition: all 0.3s ease;
+        }
+
+        .mentor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 32px 66px rgba(0, 0, 0, 0.75); /* Stronger shadow on hover */
+        }
+
+        /* Mentor Information Styles */
+        .mentor-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 40%;
+        }
+
+        .mentor-info img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #1DB954; /* Spotify green border */
+            margin-bottom: 20px;
+        }
+
+        .mentor-details h2 {
+            margin: 0;
+            font-size: 36px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .mentor-details p {
+            margin: 5px 0;
+            color: #b3b3b3; /* Spotify's lighter text color */
+            font-size: 20px;
+        }
+
+        .experience {
+            color: #1DB954;
+            margin-top: 5px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .description {
+            margin-top: 15px;
+            font-size: 20px;
+            color: #b3b3b3;
+            line-height: 1.5;
+        }
+
+        /* Social Icons Styles */
+        .social-icons {
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #b3b3b3;
+            text-decoration: none;
+        }
+
+        .social-icons a i {
+            font-size: 28px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover i {
+            color: #1DB954; /* Spotify green on hover */
+        }
+
+        /* Tags Styles */
+        .tags {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tags span {
+            background-color: #282828;
+            border-radius: 20px;
+            padding: 8px 15px;
+            margin: 6px;
+            font-size: 18px;
+            color: #1DB954;
+            font-weight: bold;
+        }
+
+        /* Right Panel Styles */
+        .right-panel {
+            width: 60%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Plan Options Styles */
+        .plan-options {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .plan-options button {
+            background-color: transparent;
+            border: none;
+            padding: 12px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #b3b3b3;
+            font-weight: bold;
+        }
+
+        .plan-options button.active {
+            color: #1DB954;
+            border-bottom: 3px solid #1DB954;
+        }
+
+        /* Booking Details Styles */
+        .booking-details {
+            font-size: 18px;
+            color: #b3b3b3;
+            margin-bottom: 15px;
+        }
+
+        .booking-price {
+            font-size: 36px;
+            color: #1DB954;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        /* Book Button Styles */
+        .btn-book {
+            background-color: #1DB954;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            font-size: 22px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-book:hover {
+            background-color: #1aa34a; /* Slightly darker green on hover */
+        }
+
+        /* Next Available Styles */
+        .next-available {
+            margin-top: 15px;
+            color: #b3b3b3;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mentor-card">
+        <div class="mentor-info">
+            <img src="https://xsgames.co/randomusers/assets/avatars/male/3.jpg" alt="Mentor Photo">
+            <div class="mentor-details">
+                <h2>rahul</h2>
+                <p>Mindfullness</p>
+                <p class="experience">6 yrs of Exp</p>
+                <p class="description">
+                    With a strong background in Data Science, I have spent the last few years working on complex data projects, transforming raw data into actionable insights. My expertise lies in predictive modeling, machine learning algorithms, data wrangling, and big data analytics. 
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="tags">
+                    <span>Spark</span>
+                    <span>Big Data</span>
+                    <span>Data Warehousing</span>
+                    <span>Python</span>
+                    <span>SQL</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="plan-options">
+                <button class="active" onclick="updatePlan('6 Months', '₹1000 Per Month', '2x Sessions Per Week', 'Unlimited Chat with Mentor', 'Job Referrals in Top Companies')">6 Months</button>
+                <button onclick="updatePlan('3 Months', '₹600 Per Month', '1x Sessions Per Week', 'Limited Chat with Mentor', 'Job Referrals in Selected Companies')">3 Months</button>
+                <button onclick="updatePlan('1 Month', '₹300 Per Month', '1x Session Per Week', 'No Chat with Mentor', 'No Job Referrals')">1 Month</button>
+            </div>
+            <div class="booking-details" id="booking-details">
+                <p>2x Sessions Per Week</p>
+                <p>Unlimited Chat with Mentor</p>
+                <p>Job Referrals in Top Companies</p>
+            </div>
+            <div id="booking-price" class="booking-price">₹1000 per Month</div>
+            
+            <div>
+                <a href="F:\HTML HACK\login\hackthon\Index.html\payemnt gateway\bill.html">
+                    <button class="btn-book">Book a FREE Trial</button>
+                </a>
+            </div>
+            
+            <div class="next-available">Next Available: Sat May 11 2024</div>
+        </div>
+    </div>
+
+    <script>
+        function updatePlan(planName, price, sessions, chat, referrals) {
+            // Update price display
+            document.getElementById("booking-price").textContent = price;
+
+            // Update booking details
+            const details = `
+                <p>${sessions}</p>
+                <p>${chat}</p>
+                <p>${referrals}</p>
+            `;
+            document.getElementById("booking-details").innerHTML = details;
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.plan-options button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Add active class to the clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

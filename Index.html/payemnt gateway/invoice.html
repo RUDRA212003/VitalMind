@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - VitalMind</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .invoice-container {
+            background-color: #181818;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 16px 41px rgba(0, 0, 0, 0.5);
+            border: 1px solid #282828;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #1DB954;
+        }
+
+        .invoice-details {
+            margin-bottom: 20px;
+        }
+
+        .invoice-details p {
+            margin: 5px 0;
+        }
+
+        .total-amount {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .btn-print {
+            background-color: #1DB954;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-print:hover {
+            background-color: #1aa34a;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invoice-container">
+        <h1>Invoice</h1>
+        <div class="invoice-details">
+            <p><strong>Name:</strong> <span id="invoice-name"></span></p>
+            <p><strong>Phone Number:</strong> <span id="invoice-number"></span></p>
+            <p><strong>Email Address:</strong> <span id="invoice-email"></span></p>
+            <p><strong>Occupation:</strong> <span id="invoice-occupation"></span></p>
+            <p><strong>Billing Address:</strong> <span id="invoice-address"></span></p>
+            <p><strong>Zip Code:</strong> <span id="invoice-zip"></span></p>
+            <p><strong>Payment Method:</strong> <span id="invoice-payment-method"></span></p>
+            <p><strong>Payment Information:</strong> <span id="invoice-payment-info"></span></p>
+        </div>
+
+        <div class="total-amount">
+            Total Amount: <span id="invoice-amount"></span>
+        </div>
+
+        <button class="btn-print" onclick="window.print();">Print Invoice</button>
+    </div>
+
+    <script>
+        // Function to retrieve payment information from localStorage
+        function loadInvoice() {
+            document.getElementById('invoice-name').innerText = localStorage.getItem('name');
+            document.getElementById('invoice-number').innerText = localStorage.getItem('number');
+            document.getElementById('invoice-email').innerText = localStorage.getItem('email');
+            document.getElementById('invoice-occupation').innerText = localStorage.getItem('occupation');
+            document.getElementById('invoice-address').innerText = localStorage.getItem('address');
+            document.getElementById('invoice-zip').innerText = localStorage.getItem('zip');
+            document.getElementById('invoice-payment-method').innerText = localStorage.getItem('payment-method');
+            document.getElementById('invoice-payment-info').innerText = localStorage.getItem('payment-info');
+            document.getElementById('invoice-amount').innerText = "$100"; // Change to actual amount if needed
+        }
+
+        // Load the invoice details on page load
+        window.onload = loadInvoice;
+    </script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Page - Spotify Theme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Billing Form Styles */
+        .billing-container {
+            background-color: #181818;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 16px 41px rgba(0, 0, 0, 0.5);
+            border: 1px solid #282828;
+        }
+
+        .billing-container h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #1DB954;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            color: #b3b3b3;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #282828;
+            background-color: #2a2a2a;
+            color: #fff;
+            border-radius: 10px;
+        }
+
+        /* Submit Button */
+        .btn-submit {
+            background-color: #1DB954;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #1aa34a;
+        }
+
+        /* Payment Success Animation */
+        .payment-success {
+            display: none;
+            text-align: center;
+            font-size: 20px;
+            color: #1DB954;
+        }
+
+        .spinner {
+            display: none;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #1DB954;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Redirect Button */
+        .redirect-container {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-redirect {
+            background-color: #1DB954;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-redirect:hover {
+            background-color: #1aa34a;
+        }
+
+        .redirect-message {
+            font-size: 18px;
+            color: #b3b3b3;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="billing-container" id="billing-container">
+        <h1>Billing Information</h1>
+        <form id="billing-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="number">Phone Number</label>
+                <input type="tel" id="number" name="number" placeholder="Enter your phone number" required maxlength="10">
+            </div>
+
+            <div class="form-group">
+                <label for="occupation">Occupation</label>
+                <select id="occupation" name="occupation" required>
+                    <option value="">Select your occupation</option>
+                    <option value="Software Engineer">Software Engineer</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Designer">Designer</option>
+                    <option value="Student">Student</option>
+                    <option value="Freelancer">Freelancer</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Lawyer">Lawyer</option>
+                    <option value="Accountant">Accountant</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Billing Address</label>
+                <input type="text" id="address" name="address" placeholder="Enter your billing address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="zip">Zip Code</label>
+                <input type="number" id="zip" name="zip" placeholder="Enter your zip code" required>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="form-group">
+                <label for="payment-method">Payment Method</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Debit Card">Debit Card</option>
+                    <option value="PayPal">PayPal</option>
+                    <option value="Google Pay">Google Pay</option>
+                    <option value="Apple Pay">Apple Pay</option>
+                    <option value="UPI">UPI</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="payment-details">
+                <label for="payment-info">Payment Information</label>
+                <input type="text" id="payment-info" name="payment-info" placeholder="Enter payment details" required>
+            </div>
+            
+            <div>
+                <button type="submit" class="btn-submit">Pay Now</button>
+            </div>
+        </form>
+
+        <!-- Loading Spinner -->
+        <div class="spinner" id="spinner"></div>
+
+        <!-- Payment Success Message -->
+        <div class="payment-success" id="payment-success">
+            <i class="fas fa-check-circle"></i> Payment Successful!
+        </div>
+
+        <!-- Redirect Button and Message -->
+        <div class="redirect-container" id="redirect-container">
+            <div class="redirect-message">Your payment has been processed! Click the button below to access your course.</div>
+            <button class="btn-redirect" id="redirect-button">Click Here to watch course</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('payment-method').addEventListener('change', function() {
+            const paymentInfo = document.getElementById('payment-details');
+            paymentInfo.style.display = 'block';
+            paymentInfo.querySelector('input').placeholder = `Enter ${this.value} details`;
+        });
+
+        document.getElementById('billing-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting
+
+            // Show the loading spinner
+            document.getElementById('spinner').style.display = 'block';
+
+            // Simulate payment processing delay
+            setTimeout(function() {
+                // Hide the spinner
+                document.getElementById('spinner').style.display = 'none';
+
+                // Show success message and redirect button
+                document.getElementById('payment-success').style.display = 'block';
+                document.getElementById('redirect-container').style.display = 'block';
+            }, 3000); // 3-second delay
+        });
+
+        // Add redirect functionality to button
+        document.getElementById('redirect-button').addEventListener('click', function() {
+            window.location.href = 'video.html'; // Make sure the file path is correct
+        });
+    </script>
+</body>
+</html>

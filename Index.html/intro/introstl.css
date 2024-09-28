@@ -1,0 +1,149 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #b3b3b3;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #181818;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.logo h1 {
+    font-size: 28px;
+    color: #1db954;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #1db954;
+    color: white;
+    border-radius: 5px;
+}
+
+.login-btn {
+    padding: 10px 20px;
+    background-color: #1db954;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #1aa34a;
+}
+
+/* Banner Section */
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: #282828;
+    padding: 20px;
+    margin-top: 80px; /* To account for the fixed header */
+    position: relative;
+}
+
+.banner-content {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 800px;
+}
+
+.banner h2 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    color: #1db954;
+}
+
+.banner p {
+    font-size: 1.2em;
+    color: #b3b3b3;
+}
+
+/* Sections (About, Contact) */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#about {
+    background-color: #1b1b1b;
+    color: #b3b3b3;
+}
+
+#about h2 {
+    color: #1db954;
+}
+
+#contact {
+    background-color: #282828;
+    color: #b3b3b3;
+}
+
+#contact h2 {
+    color: #1db954;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #181818;
+    margin-top: 20px;
+}
+
+footer p {
+    color: #b3b3b3;
+}

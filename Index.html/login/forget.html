@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+        /* Global Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #191414;
+            color: #fff;
+        }
+
+        /* Forgot Password Box */
+        .forgot-box {
+            width: 400px;
+            background-color: #000;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .forgot-box h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .forgot-box p {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        /* Input Fields */
+        .user-box {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .user-box input {
+            width: 100%;
+            padding: 10px;
+            background: #2a2a2a;
+            border: 1px solid #333;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .user-box label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        /* Submit Button */
+        .forgot-box button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1DB954;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .forgot-box button:hover {
+            background-color: #1ed760;
+        }
+
+        /* Notification message styling */
+        #notification {
+            display: none;
+            margin-top: 15px;
+            color: #1DB954;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Back to login */
+        .back-to-login {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .back-to-login a {
+            color: #1DB954;
+            text-decoration: none;
+        }
+
+        .back-to-login a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="forgot-box">
+        <h2>Forgot your password?</h2>
+        <p>Enter your Gmail address, and we'll send you a link to reset your password.</p>
+        <form id="forgotForm">
+            <div class="user-box">
+                <label for="email">Gmail Address</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your Gmail">
+            </div>
+            <button type="submit" id="submitBtn">Send Reset Link</button>
+        </form>
+        <!-- Notification message -->
+        <div id="notification">Check your email for the password recovery link!</div>
+        <div class="back-to-login">
+            <p><a href="C:\Users\Lenovo\Desktop\Index.html\Login.html">Back to login</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('forgotForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var email = document.getElementById('email').value;
+
+            // Validate if the email is a Gmail address
+            if (email.endsWith('@gmail.com')) {
+                // Simulate sending a reset link (in a real app, this would involve backend logic)
+                
+                // Hide the form and show the notification
+                document.getElementById('forgotForm').style.display = 'none';
+                document.getElementById('notification').style.display = 'block';
+            } else {
+                alert('Please enter a valid Gmail address.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalMind - Mentor Categories</title>
+    <link rel="stylesheet" href="F:\HTML HACK\login\hackthon\Index.html\home page\homestyl.css"> <!-- Link to external CSS file -->
+    <style>
+        /* Basic styles for user info */
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-circle {
+            width: 40px;
+            height: 40px;
+            background-color: #ff8800;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .username {
+            margin-left: 10px;
+            cursor: pointer; /* Indicate it's clickable */
+            color: #fff; /* Change the color to match the theme */
+            font-size: 18px; /* Ensure font size is appropriate */
+            text-decoration: none; /* Remove default underline */
+        }
+
+        .username:hover {
+            text-decoration: underline; /* Underline on hover for better UX */
+        }
+
+        /* Profile photo styling */
+        .profile-photo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        /* Scrolling banner styles */
+        .banner-container {
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: #00000066;
+            position: relative;
+            height: 250px; /* Adjust height to fit logo sizes */
+            margin: 150px 100; /* Add margin for spacing */
+        }
+
+        .banner {
+            display: inline-block;
+            animation: scroll 6s linear infinite; /* Adjust duration for speed */
+        }
+
+        .banner img {
+            height: 250px; /* Set height of images in the banner */
+            margin-right: 100; /* Remove margin for seamless scrolling */
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0); /* Start from left */
+            }
+            to {
+                transform: translateX(-50%); /* End at half the width for seamless effect */
+            }
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #000; /* Footer background color */
+            color: #fff; /* Footer text color */
+            text-align: center; /* Center the text */
+            padding: 10px; /* Add some padding */
+            position: relative; /* Position relative for proper alignment */
+            bottom: 0; /* Align to the bottom */
+            width: 100%; /* Full width */
+            margin-top: 20px; /* Space above the footer */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="F:\HTML HACK\login\hackthon\Index.html\img\symbol.png" alt="Mentors Media Logo">
+            <h1>VitalMind</h1>
+        </div>
+        <nav>
+            <ul class="categories">
+                <li><a href="F:\HTML HACK\login\hackthon\Index.html\home page\catogaries\tech.html"><button>Technology</button></a></li>
+                <li><a href="F:\HTML HACK\login\hackthon\Index.html\home page\catogaries\spiritual.html"><button>Spirituality</button></a></li>
+                <li><a href="F:\HTML HACK\login\hackthon\Index.html\home page\catogaries\business.html"><button>Business</button></a></li>
+                <li><a href="F:\HTML HACK\login\hackthon\Index.html\home page\catogaries\h&f.html"><button>Health & Fitness</button></a></li>
+                <li><a href="F:\HTML HACK\login\hackthon\Index.html\home page\catogaries\junior.html"><button>Juniors</button></a></li>
+            </ul>
+        </nav>
+        
+        <div class="user-info">
+            <img src="" alt="Profile Photo" class="profile-photo" id="profilePhoto">
+            <a href="F:\HTML HACK\login\hackthon\Index.html\home page\user_page\user.html" class="username"></a> <!-- Wrap username in an anchor tag -->
+        </div>
+    </header>
+    
+    <main>
+        <!-- Scrolling Banner -->
+        <div class="banner-container">
+            <div class="banner" id="mentorBanner">
+                <!-- Mentor images -->
+                <a href="F:\HTML HACK\login\hackthon\Index.html\home page\catogaries\tech.html">
+                    <img src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-business-presentation-3d-character-illustration-png-image_13161537.png" alt="tech" height="100">
+                </a>
+                <a href="F:\HTML HACK\login\hackthon\Index.html\home page\catogaries\spiritual.html">
+                    <img src="https://spiritualtablets.com/wp-content/uploads/2022/07/Spiritual-Intellect-Is-the-Root-Logo.png" alt="spiritual" height="100">
+                </a>
+                <a href="F:\HTML HACK\login\hackthon\Index.html\home page\catogaries\business.html">
+                    <img src="https://cdn.pixabay.com/photo/2021/08/26/07/42/business-6575399_640.png" alt="business" height="100">
+                </a>
+                <a href="F:\HTML HACK\login\hackthon\Index.html\home page\catogaries\h&f.html">
+                    <img src="https://healthlifefitness.org/wp-content/uploads/2024/05/transparent_logo_in_png_white-reduced-trans-space-x-1000.png" alt="h&f" height="100">
+                </a>
+                <a href="F:\HTML HACK\login\hackthon\Index.html\home page\catogaries\junior.html">
+                    <img src="https://b.fssta.com/uploads/application/soccer/team-logos/junior.vresize.250.250.medium.0.png" alt="juniors" height="100">
+                </a>
+                <!-- Duplicate the images for seamless scrolling -->
+                <a href="F:\HTML HACK\login\hackthon\Index.html\home page\catogaries\tech.html">
+                    <img src="https://www.johnson.cornell.edu/wp-content/uploads/sites/3/2023/10/p3-digital-technology-immersion-color.png" alt="tech" height="100">
+                </a>
+                <a href="F:\HTML HACK\login\hackthon\Index.html\home page\catogaries\spiritual.html">
+                    <img src="https://spiritualtablets.com/wp-content/uploads/2022/07/Spiritual-Intellect-Is-the-Root-Logo.png" alt="spiritual" height="100">
+                </a>
+                <a href="F:\HTML HACK\login\hackthon\Index.html\home page\catogaries\business.html">
+                    <img src="https://cdn.pixabay.com/photo/2021/08/26/07/42/business-6575399_640.png" alt="business" height="100">
+                </a>
+                <a href="F:\HTML HACK\login\hackthon\Index.html\home page\catogaries\h&f.html">
+                    <img src="https://healthlifefitness.org/wp-content/uploads/2024/05/transparent_logo_in_png_white-reduced-trans-space-x-1000.png" alt="h&f" height="100">
+                </a>
+                <a href="F:\HTML HACK\login\hackthon\Index.html\home page\catogaries\junior.html">
+                    <img src="https://b.fssta.com/uploads/application/soccer/team-logos/junior.vresize.250.250.medium.0.png" alt="juniors" height="100">
+                </a>
+            </div>
+        </div>
+        <h2 style="text-align: center;">Meet Our Mentors</h2>
+        <div class="mentor-grid" id="mentor-grid">
+            <!-- Mentor 1 -->
+            <a href="F:\HTML HACK\login\hackthon\Index.html\home page\mentor\mentors\mentor2.html">
+                <div class="mentor-box">
+                    <img src="https://randomuser.me/api/portraits/women/5.jpg" alt="Mentor Photo" class="mentor-photo">
+                    <h3>Jane Doe</h3>
+                    <p>Technology Mentor</p>
+                </div>
+            </a>
+        
+            <!-- Mentor 2 -->
+            <div class="mentor-box">
+                <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="Mentor Photo" class="mentor-photo">
+                <h3>John Smith</h3>
+                <p>Business Mentor</p>
+            </div>
+        
+            <!-- Mentor 3 -->
+            <div class="mentor-box">
+                <img src="https://randomuser.me/api/portraits/women/8.jpg" alt="Mentor Photo" class="mentor-photo">
+                <h3>Mary Johnson</h3>
+                <p>Health & Fitness Mentor</p>
+            </div>
+        
+            <!-- Mentor 4 -->
+            <div class="mentor-box">
+                <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Mentor Photo" class="mentor-photo">
+                <h3>Robert Brown</h3>
+                <p>Spiritual Mentor</p>
+            </div>
+        
+            <!-- Mentor 5 -->
+            <div class="mentor-box">
+                <img src="https://randomuser.me/api/portraits/women/6.jpg" alt="Mentor Photo" class="mentor-photo">
+                <h3>Lisa White</h3>
+                <p>Marketing Mentor</p>
+            </div>
+        
+            <!-- Mentor 6 -->
+            <div class="mentor-box">
+                <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Mentor Photo" class="mentor-photo">
+                <h3>Michael Green</h3>
+                <p>Entrepreneurship Mentor</p>
+            </div>
+        
+            <!-- Mentor 7 -->
+            <div class="mentor-box">
+                <img src="https://randomuser.me/api/portraits/women/7.jpg" alt="Mentor Photo" class="mentor-photo">
+                <h3>Emily Davis</h3>
+                <p>Data Science Mentor</p>
+            </div>
+        
+            <!-- Mentor 8 -->
+            <div class="mentor-box">
+                <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Mentor Photo" class="mentor-photo">
+                <h3>David Wilson</h3>
+                <p>Finance Mentor</p>
+            </div>
+        
+            <!-- Mentor 9 -->
+            <div class="mentor-box">
+                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Mentor Photo" class="mentor-photo">
+                <h3>Sarah Miller</h3>
+                <p>Life Coach Mentor</p>
+            </div>
+        
+            <!-- Mentor 10 -->
+            <div class="mentor-box">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Mentor Photo" class="mentor-photo">
+                <h3>James Taylor</h3>
+                <p>Public Speaking Mentor</p>
+            </div>
+        </div>
+        
+        
+        <div class="mentor-grid" id="mentor-grid">
+            <!-- Mentor boxes will be dynamically generated here -->
+        </div>
+    </main>
+
+    <!--<script src="F:\HTML HACK\login\hackthon\Index.html\home page\homejs.js"></script>-->
+    <script>
+        // Get the username and profile photo from localStorage
+        const username = localStorage.getItem('username') || 'Guest';
+        const profilePhoto = localStorage.getItem('profilePhoto');
+
+        // Set the username in the anchor tag
+        document.querySelector('.username').textContent = username;
+
+        // Set the profile photo if available
+        if (profilePhoto) {
+            document.getElementById('profilePhoto').src = profilePhoto;
+        } else {
+            document.getElementById('profilePhoto').style.display = 'none'; // Hide if no photo
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>Creators: Team Amigo</p>
+        <p>Email Address: example@gmail.com</p>
+    </footer>
+</body>
+</html>
