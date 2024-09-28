@@ -6,7 +6,7 @@ Shivakumar S Paraddi (paraddishivakumar@gmail.com) <br>
 Rudresh M (rudratiptur@gmail.com) <br>
 Prathiba B R (prathibadevangp@gmail.com) <br>
 <br>
-Currently this proect worked on FRONT-END part<br>
+Currently this project worked on FRONT-END part<br>
 
 Start from Landing page <br>
 note:<br>
