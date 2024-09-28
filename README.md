@@ -8,6 +8,7 @@ Prathiba B R (prathibadevangp@gmail.com) <br>
 <br>
 Currently this project worked on FRONT-END part<br>
 
+In branches you can get VitalMinds texts
 Start from Landing page <br>
 note:<br>
 Paths may changes because we had saved local device paths from pages to pages 
